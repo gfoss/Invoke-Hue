@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Philips Hue Alert" Version="1" Guid="0ab696f2-58a1-4d2b-9a4a-f27dc65d5e07">
+
+  <!-- Toggle Room Lights -->
+  <remv1:Action Name="Toggle Room Lights" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file hue.ps1" Order="1" />
+    <remv1:StringParameter Name="Bridge IP Address" Switch="-hueIPaddress " Order="2" />
+    <remv1:EncryptedParameter>
+      <remv1:StringParameter Name="Hue API Key" Switch="-hueAPIkey " Order="3" />
+    </remv1:EncryptedParameter>
+    <remv1:StringParameter Name="Room Name" Switch="-room  " Order="4" />
+    <remv1:StringParameter Name="State (on/off/red/blue/bright)" Switch="-state " Order="5" />
+  </remv1:Action>
+
+  <!-- Toggle Single Light -->
+  <remv1:Action Name="Toggle Single Light" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file hue.ps1" Order="1" />
+    <remv1:StringParameter Name="Bridge IP Address" Switch="-hueIPaddress " Order="2" />
+    <remv1:EncryptedParameter>
+      <remv1:StringParameter Name="Hue API Key" Switch="-hueAPIkey " Order="3" />
+    </remv1:EncryptedParameter>
+    <remv1:StringParameter Name="Room Name" Switch="-light  " Order="4" />
+    <remv1:StringParameter Name="State (on/off/red/blue/bright)" Switch="-state " Order="5" />
+  </remv1:Action>
+
+</remv1:Remediation-Plugin>
